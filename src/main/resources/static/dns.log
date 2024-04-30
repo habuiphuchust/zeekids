@@ -1,0 +1,41 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dns
+#open	2024-04-12-18-52-49
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected
+#types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool
+1712922739.936307	Cv1Ku4XNbWTOde5tj	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922740.944528	Cv1Ku4XNbWTOde5tj	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922742.953406	Cv1Ku4XNbWTOde5tj	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922746.966556	Cv1Ku4XNbWTOde5tj	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922754.965339	Cv1Ku4XNbWTOde5tj	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922739.935388	Cn7NGdcyY4PEiBIek	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922740.943759	Cn7NGdcyY4PEiBIek	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922742.953025	Cn7NGdcyY4PEiBIek	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922746.965474	Cn7NGdcyY4PEiBIek	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922754.964706	Cn7NGdcyY4PEiBIek	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922770.966611	Cd3mAT3KtEYdYgrJH6	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922770.967026	CbQ5Op1ETGQ3xhiZ95	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_nmea-0183._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922960.959339	Cq8ls82wlDfKcMvJf8	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipps._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712922960.959340	Ce0KYyF9QyzgCaiK	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipps._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923010.179568	CuKoPk1RU1bm0nS6Ac	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923011.179306	CuKoPk1RU1bm0nS6Ac	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923010.179570	Cxw9P948lnr5AqNIXc	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923011.179307	Cxw9P948lnr5AqNIXc	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923312.190429	CQMTmg3HzcqPmk43gb	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923313.191686	CQMTmg3HzcqPmk43gb	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923312.191563	Co3lRD1oGfot94A7hd	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923313.191957	Co3lRD1oGfot94A7hd	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923473.014856	CWcS851qXVHG07B6mj	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipps._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923473.015395	CHtftH1KofTYtVp0Tc	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipps._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923490.969817	CW9Xo11tBCr2XaYps	192.168.56.101	5353	224.0.0.251	5353	udp	0	0.001185	desktop-0ek8073.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	fe80::853e:e654:81f9:20f2,192.168.56.101	60.000000,60.000000	F
+1712923490.972605	CkdLw93rGqkFnXGCMc	fe80::853e:e654:81f9:20f2	5353	ff02::fb	5353	udp	0	0.000909	desktop-0ek8073.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	fe80::853e:e654:81f9:20f2,192.168.56.101	60.000000,60.000000	F
+1712923490.974434	C8Y4VH1HHKTHgY9Sn1	fe80::853e:e654:81f9:20f2	55041	ff02::1:3	5355	udp	33824	-	desktop-0ek8073	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1712923490.975407	CucXOe3X2IZaS8LH54	192.168.56.101	55041	224.0.0.252	5355	udp	33824	-	desktop-0ek8073	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1712923614.213955	Ced1833mOlXmUYnHk8	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923615.212909	Ced1833mOlXmUYnHk8	192.168.56.1	5353	224.0.0.251	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923614.214620	CK8lsMHPc4ArvaWxa	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	32769	qclass-32769	12	PTR	-	-	F	F	F	F	0	-	-	F
+1712923615.212910	CK8lsMHPc4ArvaWxa	fe80::e6f7:3633:2655:2933	5353	ff02::fb	5353	udp	0	-	_microsoft_mcc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+#close	2024-04-12-19-08-49

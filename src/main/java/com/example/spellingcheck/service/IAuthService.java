@@ -11,5 +11,5 @@ public interface IAuthService {
 
     ResponseEntity<AuthenticationDTO> login(LoginDTO request);
 
-    User getUser() throws RuntimeException;
+    ResponseEntity<AuthenticationDTO> getUser() throws RuntimeException;
 }

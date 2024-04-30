@@ -79,10 +79,22 @@ public class AuthService implements IAuthService {
     }
 
     @Override
-    public User getUser() throws RuntimeException {
+    public ResponseEntity<AuthenticationDTO> getUser() throws RuntimeException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null && authentication.getPrincipal() instanceof User) {
-            return (User) authentication.getPrincipal();
+
+        if (authentication != null) {
+            List<String> roles = new ArrayList<>();
+            for (GrantedAuthority grantedAuthority : authentication.getAuthorities()) {
+                String authority = grantedAuthority.getAuthority();
+                roles.add(authority);
+            }
+            AuthenticationDTO authenticationDTO = AuthenticationDTO.builder()
+                    .roles(roles)
+                    .token("")
+                    .username(authentication.getName())
+                    .fullname(((CustomUserDetails)authentication.getPrincipal()).getUser().getFullName())
+                    .build();
+            return ResponseEntity.ok(authenticationDTO);
         }
         throw new CustomException(ExceptionCode.UNAUTHORIZED);
     }

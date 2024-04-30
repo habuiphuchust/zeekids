@@ -1,0 +1,22 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	notice
+#open	2024-04-12-18-54-59
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
+#types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
+1712922899.789056	-	-	-	-	-	-	-	-	-	ScanPort::Scan_Port	attempted 20 or more connections during 5.0 mins	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923000.825115	CWvrgG4AKB4EoH90u4	192.168.56.103	56994	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923037.890529	CBEa6Z3RvsQuDj8Vs7	192.168.56.103	53949	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923058.309636	-	-	-	-	-	-	-	-	-	ScanPort::Scan_Port	attempted 20 or more connections during 5.0 mins	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923059.415870	COIqGk4o0pInmsHotl	192.168.56.103	57728	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923136.702794	-	-	-	-	-	-	-	-	-	DOS::PING_OF_DEATH	received 200 or more icmp request with big length during 5.0 mins on 192.168.56.1	ping of death	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923194.617284	-	-	-	-	-	-	-	-	tcp	DOS::TCP_SYN_FLUSH	attempted 2000 or more connections during 5.0 mins on 192.168.56.1:502/tcp	tcp syn flush	-	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923545.163492	CSwBWe1HXETeQlVijg	192.168.56.101	49673	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdtTar	192.168.56.101	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923595.822141	C6XXLBsgM1OtdtDUd	192.168.56.101	49674	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdtTar	192.168.56.101	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923637.457821	-	-	-	-	-	-	-	-	-	DOS::PING_OF_DEATH	received 200 or more icmp request with big length during 5.0 mins on 192.168.56.1	ping of death	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923649.608700	-	-	-	-	-	-	-	-	tcp	DOS::TCP_SYN_FLUSH	attempted 2000 or more connections during 5.0 mins on 192.168.56.1:502/tcp	tcp syn flush	-	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923729.461961	CDyha3NwPIgYMQeVa	192.168.56.103	39706	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1712923729.461961	CFExFL1AykLA7jfTBd	192.168.56.103	39705	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2024-04-12-19-08-49
