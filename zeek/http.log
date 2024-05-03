@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2024-05-03-10-43-36
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1714707811.356327	CKEZbT2CQlZMwym0T6	192.168.56.1	59323	192.168.56.102	8080	2	GET	192.168.56.102:8080	/favicon.ico	http://192.168.56.102:8080/	-	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1714707811.200820	CKEZbT2CQlZMwym0T6	192.168.56.1	59323	192.168.56.102	8080	1	GET	192.168.56.102:8080	/	-	-	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1714707876.836307	Cv6EIZTiprr02Oh1h	192.168.56.1	59326	192.168.56.102	8080	1	GET	192.168.56.102:8080	/api/start-zeekids	-	-	PostmanRuntime/7.37.3	-	79	0	-	-	-	-	(empty)	-	-	-	FLFD9v3pXhFoCFbMc3	-	text/json	-	-	-
+1714707899.903562	CAzjBq3PR5rXA0GU91	192.168.56.1	59336	192.168.56.102	8080	1	GET	192.168.56.102:8080	/api/stop-zeekids	-	-	PostmanRuntime/7.37.3	-	79	0	-	-	-	-	(empty)	-	-	-	FOrptt4LG0urjRAk3k	-	text/json	-	-	-
+#close	2024-05-03-10-44-59

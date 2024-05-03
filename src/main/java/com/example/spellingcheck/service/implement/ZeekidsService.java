@@ -1,54 +1,117 @@
 package com.example.spellingcheck.service.implement;
 
+import com.example.spellingcheck.model.dto.response.ZeekDTO;
 import com.example.spellingcheck.service.IZeekidsService;
+import com.example.spellingcheck.util.Constants;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import java.io.*;
 
 @Service
 public class ZeekidsService implements IZeekidsService {
     private Process zeekidsProcess;
+    private final ZeekDTO zeekDTO = new ZeekDTO();
     @Override
-    public void startZeekids() {
+    public ResponseEntity<ZeekDTO> start() {
         if (zeekidsProcess == null || !zeekidsProcess.isAlive()) {
             try {
-                // Đường dẫn đến thực thi của Zeekids và các đối số
-                String zeekidsPath = "C:\\Windows\\System32\\notepad.exe"; // Thay thế bằng đường dẫn thực tế đến tệp thực thi Zeekids
-                String[] command = {zeekidsPath};
-
                 // Khởi động tiến trình Zeekids bằng ProcessBuilder
-//                ProcessBuilder processBuilder = new ProcessBuilder(command);
-//                zeekidsProcess = processBuilder.start();
-                zeekidsProcess = Runtime.getRuntime().exec(command);
+                ProcessBuilder processBuilder = new ProcessBuilder(Constants.ZEEK_START_COMMAND);
+                zeekidsProcess = processBuilder.start();
 
                 System.out.println(zeekidsProcess.pid());
 
-
                 // Kiểm tra xem tiến trình đã được khởi động thành công hay không
                 if (zeekidsProcess.isAlive()) {
-                    System.out.println("Zeekids started successfully.");
+                    zeekDTO.setStatus(true);
+                    zeekDTO.setMessage("Zeekids started successfully.");
                 } else {
-                    System.out.println("Failed to start Zeekids.");
+                    zeekDTO.setStatus(false);
+                    zeekDTO.setMessage("Failed to start Zeekids.");
                 }
 
             } catch (IOException e) {
-                System.err.println("Error starting Zeekids: " + e.getMessage());
+                zeekDTO.setStatus(false);
+                zeekDTO.setMessage("Error starting Zeekids: " + e.getMessage());
             }
         } else {
-            System.out.println("Zeekids is running.");
+            zeekDTO.setStatus(false);
+            zeekDTO.setMessage("Zeekids is running.");
         }
+        return ResponseEntity.ok(zeekDTO);
 
     }
 
     @Override
-    public void stopZeekids() {
-        System.out.println(zeekidsProcess.pid());
+    public ResponseEntity<ZeekDTO> stop() {
         if (zeekidsProcess != null && zeekidsProcess.isAlive()) {
+            System.out.println(zeekidsProcess.pid());
             // Tắt tiến trình Zeekids nếu đang chạy
             zeekidsProcess.destroy();
-            System.out.println("Zeekids stopped successfully.");
+            zeekDTO.setStatus(true);
+            zeekDTO.setMessage("Zeekids stopped successfully.");
         } else {
-            System.out.println("Zeekids is not running.");
+            zeekDTO.setStatus(false);
+            zeekDTO.setMessage("Zeekids is not running.");
         }
+        return ResponseEntity.ok(zeekDTO);
     }
+
+    @Override
+    public ResponseEntity<ZeekDTO> checkState() {
+        if (zeekidsProcess != null) {
+            if (zeekidsProcess.isAlive()) {
+                zeekDTO.setStatus(true);
+                zeekDTO.setMessage("Zeekids is running.");
+                return ResponseEntity.ok(zeekDTO);
+            }
+        }
+        zeekDTO.setStatus((false));
+        zeekDTO.setMessage("Zeekids is stopped");
+        return ResponseEntity.ok(zeekDTO);
+    }
+
+    @Override
+    public ResponseEntity<ZeekDTO> changeConfig(String content) {
+        try {
+            // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
+            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH);
+            fileWriter.write(content);
+            fileWriter.close();
+
+            zeekDTO.setStatus(true);
+            zeekDTO.setMessage("thay đổi cấu hình thành công");
+        } catch (IOException e) {
+            zeekDTO.setStatus(false);
+            zeekDTO.setMessage(e.getMessage());
+        }
+        return ResponseEntity.ok(zeekDTO);
+    }
+
+    @Override
+    public ResponseEntity<ZeekDTO> getConfig() {
+        try {
+            // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
+            File file = new File(Constants.ZEEK_CONFIG_PATH);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append("\n"); // Thêm dòng mới sau mỗi dòng trong file
+            }
+
+            reader.close();
+            zeekDTO.setStatus(true);
+            zeekDTO.setMessage(stringBuilder.toString());
+
+        } catch (IOException e) {
+            zeekDTO.setStatus(false);
+            zeekDTO.setMessage(e.getMessage());
+
+        }
+        return ResponseEntity.ok(zeekDTO);
+    }
+
 }
