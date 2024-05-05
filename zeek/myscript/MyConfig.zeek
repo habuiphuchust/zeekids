@@ -1,7 +1,7 @@
 module MyConfig;
 
 export {
-	const MODBUS_SLAVE_IP = 192.168.56.1;
+	const MODBUS_SLAVE_IP = 192.168.56.10;
 	const SCANPORT_EPO = 5min;
 	const SCANPORT_THREADSHOLD = 20.0;
 	const MODBUS_PORT = 502/tcp;

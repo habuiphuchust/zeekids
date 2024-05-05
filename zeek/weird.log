@@ -3,9 +3,9 @@
 #empty_field	(empty)
 #unset_field	-
 #path	weird
-#open	2024-05-03-11-39-31
+#open	2024-05-05-12-25-06
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
 #types	time	string	addr	port	addr	port	string	string	bool	string	string
-1714711171.769889	CWWgVD4YNIblL5Sjfh	192.168.56.102	37128	192.168.56.1	3306	bad_TCP_checksum	-	F	zeek	TCP
-1714711171.782314	Cx272ossqidSeX43l	192.168.56.1	59618	192.168.56.102	8080	bad_TCP_checksum	-	F	zeek	TCP
-#close	2024-05-03-11-39-35
+1714886706.335618	Cy0PUF1Rsuc2otik61	192.168.56.102	35932	192.168.56.1	3306	bad_TCP_checksum	-	F	zeek	TCP
+1714886715.354694	CHYIsR1N8CH5cPnV18	192.168.56.1	54109	192.168.56.102	8080	bad_TCP_checksum	-	F	zeek	TCP
+#close	2024-05-05-12-25-17
