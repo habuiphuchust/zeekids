@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
+import java.time.Instant;
+
 
 @RestController
 @AllArgsConstructor
@@ -35,5 +37,10 @@ public class AuthController {
     @GetMapping("/myinfo")
     public ResponseEntity<AuthenticationDTO> myinfo() {
         return authService.getUser();
+    }
+
+    @GetMapping("/epoch-time")
+    public long getEpochTime() {
+        return Instant.now().toEpochMilli();
     }
 }
