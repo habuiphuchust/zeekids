@@ -15,6 +15,7 @@ export {
 # default priority of zero.
 event zeek_init() &priority=5
     {
+    print "load ScanPort";
     # Create the reducer.
     # The reducer attaches to the "conn attempted" observation stream
     # and uses the summing calculation on the observations. Keep

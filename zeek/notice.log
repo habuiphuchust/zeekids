@@ -3,21 +3,34 @@
 #empty_field	(empty)
 #unset_field	-
 #path	notice
-#open	2024-05-08-23-45-37
+#open	2024-05-17-04-30-58
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
 #types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
-1715186737.617762	Cjqdit115LnZIhAYv2	192.168.56.103	35286	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187066.266249	C6TLlT18sDyNKseY1b	192.168.56.106	35364	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdTaF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187308.511523	C6TLlT18sDyNKseY1b	192.168.56.106	35364	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdTaFTf	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187547.266952	COIMFD2X3igabUFVWa	192.168.56.106	56152	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187551.338532	COdWuh2ddmp55lmD9e	192.168.56.106	45526	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187552.954238	CAx0Ec2lzilg6QURQc	192.168.56.106	45536	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187554.568475	CV2RVx4JOR1uAWvqF1	192.168.56.106	45542	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187557.001229	CXcUhz2hgCUwPMAM29	192.168.56.106	45554	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187560.253326	CWp8ir1qxy8BoF96I1	192.168.56.106	46658	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous packet injection	history: ShADdaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187575.182600	C3Tl5V1CBl0xjRH2Q8	192.168.56.103	37690	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187595.761571	-	-	-	-	-	-	-	-	-	DOS::PING_OF_DEATH	received 200 or more icmp request with big length during 5.0 mins on 192.168.56.1	ping of death	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187605.683053	-	-	-	-	-	-	-	-	tcp	DOS::TCP_SYN_FLUSH	attempted 2000 or more connections during 5.0 mins on 192.168.56.1:502/tcp	tcp syn flush	-	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187702.647860	CHedjg1nSsEy9SphU2	192.168.56.103	35588	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1715187702.647860	CklAv64lTVHoLKz6W4	192.168.56.103	35587	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	detect scaned modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-#close	2024-05-09-00-01-42
+1715895058.847085	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	received 200 or more dns respond with big length during 5.0 mins on 192.168.56.1	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715895105.657447	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715896005.658259	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715896905.659163	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715897805.660875	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715898705.661198	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715899605.661499	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715900505.662852	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715901405.663298	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715902305.664509	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715903205.664699	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715904105.664931	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715905005.665421	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715905905.666150	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715906805.666650	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715907705.668331	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715908605.669501	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715909505.671456	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715909676.812083	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	received 200 or more dns respond with big length during 5.0 mins on 192.168.56.1	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715909841.945441	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	received 200 or more dns respond with big length during 5.0 mins on 192.168.56.1	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715910090.201378	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	received 200 or more dns respond with big length during 5.0 mins on 192.168.56.1	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715910405.671934	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715911305.672988	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715912205.673724	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715913105.674239	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715913138.365554	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	received 200 or more dns respond with big length during 5.0 mins on 192.168.56.1	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1715913447.519888	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2024-05-17-09-37-27

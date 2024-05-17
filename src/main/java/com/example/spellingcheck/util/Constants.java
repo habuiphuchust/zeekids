@@ -14,6 +14,6 @@ public class Constants {
     public static final String ALLOWED_ORIGIN = "http://192.168.56.1:5173";
     public static final String ZEEK_CONFIG_PATH = "./zeek/myscript/MyConfig.zeek";
 
-    public static final String[] ZEEK_START_COMMAND = {"bash", "-c", "cd zeek && zeek -i enp0s8 myscript"};
+    public static final String[] ZEEK_START_COMMAND = {"bash", "-c", "cd zeek && zeek -i enp0s8 local myscript"};
 
 }
