@@ -5,10 +5,7 @@ import com.example.spellingcheck.service.IZeekidsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -30,12 +27,12 @@ public class ZeekidsController {
         return zeekidsService.checkState();
     }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping("/edit-config")
-    public ResponseEntity<ZeekDTO> editConfig(@RequestBody String content) {
-        return zeekidsService.changeConfig(content);
+    @PostMapping("/edit-config/{name}")
+    public ResponseEntity<ZeekDTO> editConfig(@PathVariable String name, @RequestBody String content) {
+        return zeekidsService.changeConfig(name, content);
     }
-    @GetMapping("/get-config")
-    public ResponseEntity<ZeekDTO> getConfig() {
-        return zeekidsService.getConfig();
+    @GetMapping("/get-config/{name}")
+    public ResponseEntity<ZeekDTO> getConfig(@PathVariable String name) {
+        return zeekidsService.getConfig(name);
     }
 }

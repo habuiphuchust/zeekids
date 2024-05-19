@@ -3,10 +3,10 @@
 #empty_field	(empty)
 #unset_field	-
 #path	reporter
-#open	2024-05-17-04-30-55
+#open	2024-05-19-19-44-19
 #fields	ts	level	message	location
 #types	time	enum	string	string
-1715895055.657011	Reporter::WARNING	Your interface is likely receiving invalid TCP checksums, most likely from NIC checksum offloading.  By default, packets with invalid checksums are discarded by Zeek unless using the -C command-line option or toggling the 'ignore_checksums' variable.  Alternatively, disable checksum offloading by the network adapter to ensure Zeek analyzes the actual checksums that are transmitted.	/opt/zeek/share/zeek/base/misc/find-checksum-offloading.zeek, line 54
-1715913447.519888	Reporter::INFO	received termination signal	(empty)
-1715913447.519888	Reporter::INFO	525499 packets received on interface enp0s8, 0 (0.00%) dropped, 38 (0.01%) not processed	(empty)
-#close	2024-05-17-09-37-27
+1716122659.441361	Reporter::WARNING	Your interface is likely receiving invalid TCP checksums, most likely from NIC checksum offloading.  By default, packets with invalid checksums are discarded by Zeek unless using the -C command-line option or toggling the 'ignore_checksums' variable.  Alternatively, disable checksum offloading by the network adapter to ensure Zeek analyzes the actual checksums that are transmitted.	/opt/zeek/share/zeek/base/misc/find-checksum-offloading.zeek, line 54
+1716124219.113239	Reporter::INFO	received termination signal	(empty)
+1716124219.113239	Reporter::INFO	47535 packets received on interface enp0s8, 0 (0.00%) dropped, 6 (0.01%) not processed	(empty)
+#close	2024-05-19-20-10-19

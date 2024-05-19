@@ -1,4 +1,5 @@
-@load ScanPort.zeek
-@load ScanModbus.zeek
-@load ModbusInjection.zeek
-@load DOS.zeek
+@load ./ScanPort.zeek
+@load ./ScanModbus.zeek
+@load ./ModbusInjection.zeek
+@load ./DOS.zeek
+@load ./Vulnerable.zeek

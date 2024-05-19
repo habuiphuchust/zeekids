@@ -73,10 +73,10 @@ public class ZeekidsService implements IZeekidsService {
     }
 
     @Override
-    public ResponseEntity<ZeekDTO> changeConfig(String content) {
+    public ResponseEntity<ZeekDTO> changeConfig(String name, String content) {
         try {
             // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
-            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH);
+            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH + name);
             fileWriter.write(content);
             fileWriter.close();
 
@@ -90,10 +90,10 @@ public class ZeekidsService implements IZeekidsService {
     }
 
     @Override
-    public ResponseEntity<ZeekDTO> getConfig() {
+    public ResponseEntity<ZeekDTO> getConfig(String name) {
         try {
             // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
-            File file = new File(Constants.ZEEK_CONFIG_PATH);
+            File file = new File(Constants.ZEEK_CONFIG_PATH + name);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             StringBuilder stringBuilder = new StringBuilder();
             String line;
