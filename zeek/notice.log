@@ -3,15 +3,18 @@
 #empty_field	(empty)
 #unset_field	-
 #path	notice
-#open	2024-05-19-19-45-09
+#open	2024-05-22-16-16-11
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
 #types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
-1716122709.439164	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716122781.613286	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716122866.644518	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716123202.267468	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716123203.424204	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716123204.163420	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716123204.884106	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-1716123205.539767	-	-	-	-	-	-	-	-	-	Signature::RESET	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-#close	2024-05-19-20-10-19
+1716369371.960608	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716373239.913118	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716374139.915122	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716375039.916290	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716375105.303436	-	-	-	-	-	-	-	-	-	ScanPort::Scan_Port	attempted 20 or more connections during 5.0 mins	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716375406.843443	-	-	-	-	-	-	-	-	-	ScanPort::Scan_Port	attempted 20 or more connections during 5.0 mins	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716375939.916615	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716376839.917229	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716377739.918518	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716378639.918656	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716379405.505942	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2024-05-22-19-03-25

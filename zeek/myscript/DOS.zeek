@@ -59,12 +59,7 @@ event zeek_init() &priority=1
                         	$p=	MyConfig::MODBUS_PORT,
                         	$ts=network_time(), 
                         	$sub="tcp syn flush",
-                        	$msg=fmt("attempted %.0f or more connections during %s on %s:%s", 
-                        		result["modbus conn attempted"]$sum, 
-                        		MyConfig::TCP_SYN_FLUSH_EPO,
-                        		MyConfig::MODBUS_SLAVE_IP,
-                        		MyConfig::MODBUS_PORT),
-                        	]);
+                        	$msg="tcp syn flush";
                         }]);
                         
         SumStats::create([$name = "finding dos 2",
@@ -86,11 +81,7 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="ping of death",
-                        	$msg=fmt("received %.0f or more icmp request with big length during %s on %s", 
-                        		result["ping too big"]$sum, 
-                        		MyConfig::PING_OF_DEATH_EPO,
-                        		MyConfig::MODBUS_SLAVE_IP),
-                        	]);
+                        	$msg="ping of death";
                         }]);
 
         SumStats::create([$name = "finding dos 3",
@@ -112,11 +103,7 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="icmp flush",
-                        	$msg=fmt("received %.0f or more icmp request during %s on %s", 
-                        		result["icmp flush"]$sum, 
-                        		MyConfig::PING_OF_DEATH_EPO,
-                        		MyConfig::MODBUS_SLAVE_IP),
-                        	]);
+                        	$msg="icmp flush";
                         }]);
 
         SumStats::create([$name = "finding dos 4",
@@ -138,11 +125,7 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="dns amplification",
-                        	$msg=fmt("received %.0f or more dns respond with big length during %s on %s", 
-                        		result["dns amplification"]$sum, 
-                        		MyConfig::DNS_AMPLIFICATION_EPO,
-                        		MyConfig::MODBUS_SLAVE_IP),
-                        	]);
+                        	$msg="dns amplification";
                         }]);                                                
 
     }

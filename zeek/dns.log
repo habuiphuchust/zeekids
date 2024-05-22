@@ -3,34 +3,9 @@
 #empty_field	(empty)
 #unset_field	-
 #path	dns
-#open	2024-05-19-19-44-50
+#open	2024-05-22-17-51-26
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected
 #types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool
-1716122689.934262	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	0.916995	_ipp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	ubuntu-2.local,192.168.56.103,ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000,120.000000,120.000000	F
-1716122690.851613	C9cTiih9NILeqo4Nj	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000	F
-1716122690.131059	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	1.973805	103.56.168.192.in-addr.arpa	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	ubuntu-2.local,192.168.56.103,ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000,120.000000,120.000000	F
-1716122692.105077	C9cTiih9NILeqo4Nj	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000	F
-1716122690.384891	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	3.979692	103.56.168.192.in-addr.arpa	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	ubuntu-2.local,192.168.56.103,ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000,120.000000,120.000000	F
-1716122694.365110	C9cTiih9NILeqo4Nj	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	ubuntu-2.local,fe80::ae9d:2bfd:dd96:e629	120.000000,120.000000	F
-1716122690.454102	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_sane-port._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122690.595678	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_uscans._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122690.647587	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	103.56.168.192.in-addr.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
-1716122690.945597	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122692.936830	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122696.940956	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122704.948839	CQUXif4U5qkrEnIR53	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122704.884737	C9cTiih9NILeqo4Nj	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122720.888907	CP8yzt29uxi5pdYQgg	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122720.948841	CW8vGE3JnSqdbSIwR8	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122752.911511	CfDUm73tvY7Q8MImr5	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122752.951606	CKaGev3i1opaaLP6Pl	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122816.911713	CS1YvV3c5t0j0Ztnn2	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122816.951281	CEJtVs2lg0SB3LM42d	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122945.006568	C8n83F44hbyw4L1dC8	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716122945.006902	CHgm9D4qI0IDM5Gq09	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716123201.014993	CE5YAQ3ovMnQF1oYNc	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716123201.015302	CEVzDM1BD2OHx2rWz6	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_ipp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
-1716123773.534227	CHx2To4mWRcGdMatV3	192.168.56.1	137	192.168.56.255	137	udp	46680	-	WORKGROUP	1	C_INTERNET	32	NIMLOC	-	-	F	F	T	F	1	-	-	F
-1716123774.284605	CHx2To4mWRcGdMatV3	192.168.56.1	137	192.168.56.255	137	udp	46680	-	WORKGROUP	1	C_INTERNET	32	NIMLOC	-	-	F	F	T	F	1	-	-	F
-1716123775.034468	CHx2To4mWRcGdMatV3	192.168.56.1	137	192.168.56.255	137	udp	46680	-	WORKGROUP	1	C_INTERNET	32	NIMLOC	-	-	F	F	T	F	1	-	-	F
-#close	2024-05-19-20-10-19
+1716375076.130095	C4Ohoy2EnpRT5Mko51	fe80::ae9d:2bfd:dd96:e629	5353	ff02::fb	5353	udp	0	-	_uscan._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1716375076.130498	CCfWPz28OJ2nWxgl6j	192.168.56.103	5353	224.0.0.251	5353	udp	0	-	_uscan._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+#close	2024-05-22-19-03-25

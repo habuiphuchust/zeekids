@@ -47,8 +47,7 @@ event zeek_init() &priority=5
                         	$src=key$host, 
                         	$dst=MyConfig::MODBUS_SLAVE_IP,
                         	$ts=network_time(), 
-                        	$msg=fmt("attempted %.0f or more connections during %s", result["conn attempted"]$sum, MyConfig::SCANPORT_EPO)
-                        	]);
+                        	$msg="scan port";
                         }]);
     }
     
