@@ -59,7 +59,8 @@ event zeek_init() &priority=1
                         	$p=	MyConfig::MODBUS_PORT,
                         	$ts=network_time(), 
                         	$sub="tcp syn flush",
-                        	$msg="tcp syn flush";
+                        	$msg="tcp syn flush"
+                        ]);
                         }]);
                         
         SumStats::create([$name = "finding dos 2",
@@ -81,7 +82,8 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="ping of death",
-                        	$msg="ping of death";
+                        	$msg="ping of death"
+                        ]);
                         }]);
 
         SumStats::create([$name = "finding dos 3",
@@ -103,7 +105,8 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="icmp flush",
-                        	$msg="icmp flush";
+                        	$msg="icmp flush"
+                        ]);
                         }]);
 
         SumStats::create([$name = "finding dos 4",
@@ -125,8 +128,9 @@ event zeek_init() &priority=1
                         	$dst=key$host,
                         	$ts=network_time(), 
                         	$sub="dns amplification",
-                        	$msg="dns amplification";
-                        }]);                                                
+                        	$msg="dns amplification"
+                        ]);
+                        }]);
 
     }
     

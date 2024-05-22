@@ -47,7 +47,8 @@ event zeek_init() &priority=5
                         	$src=key$host, 
                         	$dst=MyConfig::MODBUS_SLAVE_IP,
                         	$ts=network_time(), 
-                        	$msg="scan port";
+                        	$msg="scan port"
+                        ]);
                         }]);
     }
     
