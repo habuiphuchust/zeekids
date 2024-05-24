@@ -3,8 +3,26 @@
 #empty_field	(empty)
 #unset_field	-
 #path	notice
-#open	2024-05-22-22-26-39
+#open	2024-05-24-19-32-47
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
 #types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
-1716391599.874831	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-#close	2024-05-22-22-26-39
+1716553967.324314	CTevMa4jCWPpC4Ioig	192.168.56.106	44902	192.168.56.1	502	-	-	-	tcp	ModbusInjection::Detect_Retransmission	suspicous modbus packet injection	history: DdAaTF	192.168.56.106	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554039.997718	-	-	-	-	-	-	-	-	-	DOS::DNS_AMPLIFICATION	dns amplification	dns amplification	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554056.346270	-	-	-	-	-	-	-	-	-	DOS::PING_OF_DEATH	ping of death	ping of death	-	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554070.342577	-	-	-	-	-	-	-	-	tcp	DOS::TCP_SYN_FLUSH	tcp syn flush	tcp syn flush	-	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554079.240792	-	-	-	-	-	-	-	-	-	ScanPort::Scan_Port	scan port	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554079.748641	C2CXtp1QJuxEJPvzY4	192.168.56.103	48859	192.168.56.1	502	-	-	-	tcp	ScanModbus::Scan_Port_To_Modbus	scan modbus port	-	192.168.56.103	192.168.56.1	502	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287389	C7OLwC4n9qBMPu7Mti	192.168.56.103	34986	192.168.56.1	502	-	-	-	tcp	ModbusCovertChannels::Potential_Covert_Channel	[CC_UnitID] Potential Covert Channel identified using Unit IDs!	Found Unit ID 0. (not allowed)	192.168.56.103	192.168.56.1	502	8	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287389	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect diagnostics function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287389	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287679	C6Z1pJ2KHaM8sfHp06	192.168.56.103	34970	192.168.56.1	502	-	-	-	tcp	ModbusCovertChannels::Potential_Covert_Channel	[CC_UnitID] Potential Covert Channel identified using Unit IDs!	Found Unit ID 0. (not allowed)	192.168.56.103	192.168.56.1	502	8	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287679	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287679	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287947	CNRLo03R6eAf7YP0D6	192.168.56.103	34994	192.168.56.1	502	-	-	-	tcp	ModbusCovertChannels::Potential_Covert_Channel	[CC_UnitID] Potential Covert Channel identified using Unit IDs!	Found Unit ID 0. (not allowed)	192.168.56.103	192.168.56.1	502	8	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287947	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect report slave id function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.287947	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.288183	CR7YAl2M4rYyWOpf9e	192.168.56.103	35002	192.168.56.1	502	-	-	-	tcp	ModbusCovertChannels::Potential_Covert_Channel	[CC_UnitID] Potential Covert Channel identified using Unit IDs!	Found Unit ID 0. (not allowed)	192.168.56.103	192.168.56.1	502	8	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.288183	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect read device identification function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554083.288183	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1716554169.333093	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2024-05-24-19-36-09

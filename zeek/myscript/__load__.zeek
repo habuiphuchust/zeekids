@@ -2,4 +2,5 @@
 @load ./ScanModbus.zeek
 @load ./ModbusInjection.zeek
 @load ./DOS.zeek
-@load ./Vulnerable.zeek
+@load ./ModbusDetection.zeek
+@load ./zeek-modbus-cc

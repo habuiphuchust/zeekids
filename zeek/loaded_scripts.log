@@ -3,7 +3,7 @@
 #empty_field	(empty)
 #unset_field	-
 #path	loaded_scripts
-#open	2024-05-22-22-26-34
+#open	2024-05-24-19-32-38
 #fields	name
 #types	string
 /opt/zeek/share/zeek/base/init-bare.zeek
@@ -502,5 +502,8 @@
   ./myscript/ScanModbus.zeek
   ./myscript/ModbusInjection.zeek
   ./myscript/DOS.zeek
-  ./myscript/Vulnerable.zeek
-#close	2024-05-22-22-26-39
+  ./myscript/ModbusDetection.zeek
+  ./myscript/zeek-modbus-cc/__load__.zeek
+    ./myscript/zeek-modbus-cc/main.zeek
+      ./myscript/zeek-modbus-cc/conf.zeek
+#close	2024-05-24-19-36-09

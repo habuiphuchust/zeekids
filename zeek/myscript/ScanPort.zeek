@@ -7,6 +7,9 @@ export {
     redef enum Notice::Type += {
     	Scan_Port,
     };
+    redef record SumStats::Key += {
+           host2:    addr    &default=192.168.1.1;
+    };
 }
 
 
@@ -44,9 +47,9 @@ event zeek_init() &priority=5
                         {
                         NOTICE([
                         	$note=Scan_Port, 
-                        	$src=key$host, 
-                        	$dst=MyConfig::MODBUS_SLAVE_IP,
-                        	$ts=network_time(), 
+                        	$src=key$host,
+                        	$dst=key$host2,
+                        	$ts=network_time(),
                         	$msg="scan port"
                         ]);
                         }]);
@@ -57,8 +60,8 @@ event connection_attempt(c: connection)
     # Make an observation!
     # This observation is about the host attempting the connection.
     # Each established connection counts as one so the observation is always 1.
-    if (c$id$resp_h == MyConfig::MODBUS_SLAVE_IP)
+    if (c$id$resp_h in MyConfig::MODBUS_SLAVE_IP)
     SumStats::observe("conn attempted", 
-                      SumStats::Key($host=c$id$orig_h), 
+                      SumStats::Key($host=c$id$orig_h, $host2=c$id$resp_h),
                       SumStats::Observation($num=1));
     }

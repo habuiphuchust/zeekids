@@ -1,4 +1,3 @@
-@load base/frameworks/sumstats
 @load ./MyConfig.zeek
 
 module DOS;
@@ -7,8 +6,8 @@ export {
     redef enum Notice::Type += {
     	TCP_SYN_FLUSH,
     	PING_OF_DEATH,
-      ICMP_FLUSH,
-      DNS_AMPLIFICATION,
+        ICMP_FLUSH,
+        DNS_AMPLIFICATION,
     };
 }
 
@@ -139,30 +138,30 @@ event connection_attempt(c: connection)
     # Make an observation!
     # This observation is about the host attempting the connection.
     # Each established connection counts as one so the observation is always 1.
-    if (c$id$resp_h == MyConfig::MODBUS_SLAVE_IP && c$id$resp_p == MyConfig::MODBUS_PORT)
+    if (c$id$resp_h in MyConfig::MODBUS_SLAVE_IP && c$id$resp_p == MyConfig::MODBUS_PORT)
     SumStats::observe("modbus conn attempted", 
-                      SumStats::Key($host=MyConfig::MODBUS_SLAVE_IP), 
+                      SumStats::Key($host=c$id$resp_h),
                       SumStats::Observation($num=1));
     }
 
     
 event icmp_echo_request(c: connection, info: icmp_info, id: count, seq: count, payload: string)
   {
-    if (info$len > MyConfig::PING_MAX_LENGTH && c$id$resp_h == MyConfig::MODBUS_SLAVE_IP)
+    if (info$len > MyConfig::PING_MAX_LENGTH && c$id$resp_h in MyConfig::MODBUS_SLAVE_IP)
         SumStats::observe("ping too big", 
-                        SumStats::Key($host=MyConfig::MODBUS_SLAVE_IP), 
+                        SumStats::Key($host=c$id$resp_h),
                         SumStats::Observation($num=1));
     else
         SumStats::observe("icmp flush", 
-                      SumStats::Key($host=MyConfig::MODBUS_SLAVE_IP), 
+                      SumStats::Key($host=c$id$resp_h),
                       SumStats::Observation($num=1));
   }
 
 # Define an event handler for DNS query replies
 event new_connection(c: connection)
   {
-  if (c$id$orig_h == MyConfig::MODBUS_SLAVE_IP && c$id$resp_p == 53/udp)
+  if (c$id$orig_h in MyConfig::MODBUS_SLAVE_IP && c$id$resp_p == 53/udp)
         SumStats::observe("dns amplification", 
-                      SumStats::Key($host=MyConfig::MODBUS_SLAVE_IP), 
+                      SumStats::Key($host=c$id$orig_h),
                       SumStats::Observation($num=1));
   }
