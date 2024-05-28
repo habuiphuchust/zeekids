@@ -4,6 +4,7 @@ import com.example.spellingcheck.authentication.custom.CustomUserDetails;
 import com.example.spellingcheck.authentication.jwt.JwtTokenProvider;
 import com.example.spellingcheck.exception.CustomException;
 import com.example.spellingcheck.exception.ExceptionCode;
+import com.example.spellingcheck.model.dto.request.ChangeUserDTO;
 import com.example.spellingcheck.model.dto.request.LoginDTO;
 import com.example.spellingcheck.model.dto.request.RegisterDTO;
 import com.example.spellingcheck.model.dto.response.AuthenticationDTO;
@@ -23,10 +24,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -76,6 +74,42 @@ public class AuthService implements IAuthService {
                 .fullname(((CustomUserDetails)authentication.getPrincipal()).getUser().getFullName())
                 .build();
         return ResponseEntity.ok(authenticationDTO);
+    }
+
+    @Override
+    public ResponseEntity<String> changePassword(ChangeUserDTO request) {
+        Optional<User> userOptional = userRepository.findByUsername(request.getUsername());
+        if (userOptional.isEmpty()) return ResponseEntity.ok("not found user");
+        if (request.getNewPassword().isEmpty()) return ResponseEntity.ok("new password must not empty");
+
+        User user = userOptional.get();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) return ResponseEntity.ok("you not login");
+        List<String> roles = new ArrayList<>();
+        for (GrantedAuthority grantedAuthority : authentication.getAuthorities()) {
+            String authority = grantedAuthority.getAuthority();
+            roles.add(authority);
+        }
+        if (roles.contains("ROLE_ADMIN")) {
+
+            for (Role role : user.getRoles()) {
+                if (Objects.equals(role.getName(), "ROLE_ADMIN"))
+                    authenticationManager.authenticate(
+                            new UsernamePasswordAuthenticationToken(user.getUsername(), request.getPassword()));
+            }
+            user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+            userRepository.save(user);
+            return ResponseEntity.ok("change password success");
+        } else {
+            if (!Objects.equals(authentication.getName(), request.getUsername()))
+                return ResponseEntity.ok("you aren't the account owner");
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+            user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+            userRepository.save(user);
+            return ResponseEntity.ok("change password success");
+        }
+
     }
 
     @Override

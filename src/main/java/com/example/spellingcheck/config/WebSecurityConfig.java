@@ -48,7 +48,7 @@ public class WebSecurityConfig {
                 .exceptionHandling(e -> e.accessDeniedHandler(customAccessDeniedHandler))
                 .httpBasic(h -> h.authenticationEntryPoint(customAuthenticationEntryPoint))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/login", "/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/start-zeekids", "/stop-zeekids").permitAll()
                         .requestMatchers("/users").hasRole("ADMIN")
                         .anyRequest().authenticated())
