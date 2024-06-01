@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 public interface IFileService {
     ResponseEntity<Resource> getFile(String path);
     ResponseEntity<String> getListFiles(String path);
-    ResponseEntity<String> addFile(String path, String content);
+    ResponseEntity<String> addFile(String path, String content, boolean create);
     ResponseEntity<String> addDirectory(String path);
     ResponseEntity<String> deleteFile(String path);
     ResponseEntity<String> deleteDirectory(String path);
