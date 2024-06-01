@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
@@ -77,21 +78,59 @@ public class FileService<T> implements IFileService {
 
     @Override
     public ResponseEntity<String> addFile(String path, String content) {
-        return null;
-    }
+        try {
+            // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
+            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH + path);
+            fileWriter.write(content);
+            fileWriter.close();
 
+            return ResponseEntity.ok("create file success");
+        } catch (IOException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
     @Override
     public ResponseEntity<String> addDirectory(String path) {
-        return null;
+        File dir = new File(Constants.ZEEK_CONFIG_PATH + path);
+
+        if (!dir.exists()) {
+            if (dir.mkdir()) {
+                return ResponseEntity.ok("Directory created successfully");
+            } else {
+                return ResponseEntity.badRequest().body("Failed to create the directory");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Directory already exists");
+        }
     }
 
     @Override
     public ResponseEntity<String> deleteFile(String path) {
-        return null;
+        File file = new File(Constants.ZEEK_CONFIG_PATH + path);
+
+        if (file.exists() && file.isFile()) {
+            if (file.delete()) {
+                return ResponseEntity.ok("File deleted successfully");
+            } else {
+                return ResponseEntity.badRequest().body("Failed to delete the file");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("File does not exist");
+        }
     }
 
     @Override
     public ResponseEntity<String> deleteDirectory(String path) {
-        return null;
+        File dir = new File(Constants.ZEEK_CONFIG_PATH + path);
+
+        if (dir.exists() && dir.isDirectory()) {
+            if (dir.delete()) {
+                return ResponseEntity.ok("Directory deleted successfully");
+            } else {
+                return ResponseEntity.badRequest().body("Failed to delete the directory");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Directory does not exist or is not a directory");
+        }
     }
 }
