@@ -6,6 +6,7 @@ import com.example.spellingcheck.util.Constants;
 import lombok.AllArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -28,6 +29,7 @@ public class FileController {
         return fileService.getFile("./zeek/" + filename);
     }
     @PostMapping("/config/file")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> addFile(@RequestParam(name = "path", defaultValue = "") String path, @RequestBody String content,
                                           @RequestParam(name = "new", defaultValue = "false") String create) {
         boolean newFile = false;
@@ -35,14 +37,17 @@ public class FileController {
         return fileService.addFile(path, content, newFile);
     }
     @GetMapping("/config/file/delete")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> deleteFile(@RequestParam(name = "path", defaultValue = "") String path) {
         return fileService.deleteFile(path);
     }
     @PostMapping("/config/dir")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> addDir(@RequestParam(name = "path", defaultValue = "") String path) {
         return fileService.addDirectory(path);
     }
     @GetMapping("/config/dir/delete")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> deleteDir(@RequestParam(name = "path", defaultValue = "") String path) {
         return fileService.deleteDirectory(path);
     }
