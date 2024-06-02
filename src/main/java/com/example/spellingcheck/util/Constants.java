@@ -15,5 +15,7 @@ public class Constants {
     public static final String ZEEK_CONFIG_PATH = "./zeek/myscript/";
 
     public static final String[] ZEEK_START_COMMAND = {"bash", "-c", "cd zeek && zeek -i enp0s8 local myscript"};
+    public static final String ZEEK_CHECK_STATUS = "ps -ef | grep zeek | grep -i enp0s8 | grep -v grep";
+    public static final String ZEEK_STOP = "/bin/kill -9 $(ps -ef | grep socat | grep -i enp0s8 |  awk '{print $2}')";
 
 }

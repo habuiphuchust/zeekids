@@ -26,13 +26,4 @@ public class ZeekidsController {
     public ResponseEntity<ZeekDTO> checkZeekids() {
         return zeekidsService.checkState();
     }
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping("/edit-config/{name}")
-    public ResponseEntity<ZeekDTO> editConfig(@PathVariable String name, @RequestBody String content) {
-        return zeekidsService.changeConfig(name, content);
-    }
-    @GetMapping("/get-config/{name}")
-    public ResponseEntity<ZeekDTO> getConfig(@PathVariable String name) {
-        return zeekidsService.getConfig(name);
-    }
 }

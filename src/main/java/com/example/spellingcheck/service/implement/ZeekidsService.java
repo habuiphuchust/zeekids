@@ -45,73 +45,63 @@ public class ZeekidsService implements IZeekidsService {
 
     @Override
     public ResponseEntity<ZeekDTO> stop() {
-        if (zeekidsProcess != null && zeekidsProcess.isAlive()) {
-            System.out.println(zeekidsProcess.pid());
-            // Tắt tiến trình Zeekids nếu đang chạy
-            zeekidsProcess.destroy();
-            zeekDTO.setStatus(true);
-            zeekDTO.setMessage("Zeekids stopped successfully.");
-        } else {
-            zeekDTO.setStatus(false);
-            zeekDTO.setMessage("Zeekids is not running.");
+        try {
+            // Create a process builder
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            // Split the command into a list of arguments
+            processBuilder.command("bash", "-c", Constants.ZEEK_STOP);
+            // Start the process
+            Process process = processBuilder.start();
+
+            process.waitFor();
+            if (zeekidsProcess != null && zeekidsProcess.isAlive()) {
+                System.out.println(zeekidsProcess.pid());
+                // Tắt tiến trình Zeekids nếu đang chạy
+                zeekidsProcess.destroy();
+                zeekDTO.setStatus(true);
+                zeekDTO.setMessage("Zeekids stopped successfully.");
+            } else {
+                zeekDTO.setStatus(false);
+                zeekDTO.setMessage("Zeekids is not running.");
+            }
+            return ResponseEntity.ok(zeekDTO);
+
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
         }
-        return ResponseEntity.ok(zeekDTO);
     }
 
     @Override
     public ResponseEntity<ZeekDTO> checkState() {
-        if (zeekidsProcess != null) {
-            if (zeekidsProcess.isAlive()) {
+        try {
+            // Create a process builder
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            // Split the command into a list of arguments
+            processBuilder.command("bash", "-c", Constants.ZEEK_CHECK_STATUS);
+            // Start the process
+            Process process = processBuilder.start();
+
+            // Read the output of the command
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line = reader.readLine();
+            System.out.println(line);
+            if(line == null) {
+                zeekDTO.setStatus((false));
+                zeekDTO.setMessage("Zeekids is stopped");
+            } else {
                 zeekDTO.setStatus(true);
                 zeekDTO.setMessage("Zeekids is running.");
-                return ResponseEntity.ok(zeekDTO);
-            }
-        }
-        zeekDTO.setStatus((false));
-        zeekDTO.setMessage("Zeekids is stopped");
-        return ResponseEntity.ok(zeekDTO);
-    }
-
-    @Override
-    public ResponseEntity<ZeekDTO> changeConfig(String name, String content) {
-        try {
-            // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
-            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH + name);
-            fileWriter.write(content);
-            fileWriter.close();
-
-            zeekDTO.setStatus(true);
-            zeekDTO.setMessage("thay đổi cấu hình thành công");
-        } catch (IOException e) {
-            zeekDTO.setStatus(false);
-            zeekDTO.setMessage(e.getMessage());
-        }
-        return ResponseEntity.ok(zeekDTO);
-    }
-
-    @Override
-    public ResponseEntity<ZeekDTO> getConfig(String name) {
-        try {
-            // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
-            File file = new File(Constants.ZEEK_CONFIG_PATH + name);
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            StringBuilder stringBuilder = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line);
-                stringBuilder.append("\n"); // Thêm dòng mới sau mỗi dòng trong file
             }
 
+            // Wait for the process to finish and get the exit code
+            process.waitFor();
+//            System.out.println("\nExited with code: " + exitCode);
             reader.close();
-            zeekDTO.setStatus(true);
-            zeekDTO.setMessage(stringBuilder.toString());
+            return ResponseEntity.ok(zeekDTO);
 
-        } catch (IOException e) {
-            zeekDTO.setStatus(false);
-            zeekDTO.setMessage(e.getMessage());
-
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
         }
-        return ResponseEntity.ok(zeekDTO);
     }
 
 }

@@ -3,8 +3,8 @@
 #empty_field	(empty)
 #unset_field	-
 #path	software
-#open	2024-05-27-11-54-53
+#open	2024-06-03-05-44-27
 #fields	ts	host	host_p	software_type	name	version.major	version.minor	version.minor2	version.minor3	version.addl	unparsed_version
 #types	time	addr	port	enum	string	count	count	count	count	string	string
-1716785693.035484	192.168.56.1	-	HTTP::BROWSER	Chrome	125	0	0	0	-	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0
-#close	2024-05-27-11-54-57
+1717368267.731268	192.168.56.1	-	HTTP::BROWSER	Chrome	125	0	0	0	-	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0
+#close	2024-06-03-05-50-11
