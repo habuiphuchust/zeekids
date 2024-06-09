@@ -8,4 +8,3 @@
 #types	time	string	addr	port	addr	port	string	string	bool	string	string
 1717370315.111489	CrujUR1mVMr9rfteJk	192.168.56.1	59927	192.168.56.102	8080	bad_TCP_checksum	-	F	zeek	TCP
 1717370316.410991	CmMvHH3ErL40IW6fS9	192.168.56.102	39236	192.168.56.1	3306	bad_TCP_checksum	-	F	zeek	TCP
-#close	2024-06-03-06-18-39

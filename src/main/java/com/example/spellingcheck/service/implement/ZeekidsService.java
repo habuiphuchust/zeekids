@@ -17,7 +17,7 @@ public class ZeekidsService implements IZeekidsService {
         if (zeekidsProcess == null || !zeekidsProcess.isAlive()) {
             try {
                 // Khởi động tiến trình Zeekids bằng ProcessBuilder
-                ProcessBuilder processBuilder = new ProcessBuilder(Constants.ZEEK_START_COMMAND);
+                ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c",Constants.ZEEK_START_COMMAND);
                 zeekidsProcess = processBuilder.start();
 
                 System.out.println(zeekidsProcess.pid());
@@ -54,6 +54,8 @@ public class ZeekidsService implements IZeekidsService {
             Process process = processBuilder.start();
 
             process.waitFor();
+            processBuilder.command("bash", "-c", Constants.STORE_LOG);
+            processBuilder.start().waitFor();
             if (zeekidsProcess != null && zeekidsProcess.isAlive()) {
                 System.out.println(zeekidsProcess.pid());
                 // Tắt tiến trình Zeekids nếu đang chạy
