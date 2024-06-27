@@ -2,7 +2,7 @@ module MyConfig;
 
 export {
 # ip address of slaves
-	const MODBUS_SLAVE_IP = set(192.168.56.1, 192.168.56.2);
+	const MODBUS_SLAVE_IP = set(192.168.56.1, 192.168.56.2, 127.0.0.1);
 # ip address of master
 	const MODBUS_MASTER_IP = set(192.168.56.106);
 # epo of scan port attack

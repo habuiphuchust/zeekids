@@ -1,0 +1,10 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	software
+#open	2024-06-21-11-41-16
+#fields	ts	host	host_p	software_type	name	version.major	version.minor	version.minor2	version.minor3	version.addl	unparsed_version
+#types	time	addr	port	enum	string	count	count	count	count	string	string
+1718944876.949849	192.168.56.1	-	HTTP::BROWSER	Chrome	126	0	0	0	-	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0
+1718944877.460493	192.168.56.106	8080	HTTP::SERVER	Werkzeug	2	3	7	-	Python/3	Werkzeug/2.3.7 Python/3.10.12

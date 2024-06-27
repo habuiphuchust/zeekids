@@ -3,8 +3,19 @@
 #empty_field	(empty)
 #unset_field	-
 #path	notice
-#open	2024-06-03-06-18-39
+#open	2024-06-21-18-02-48
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
 #types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
-1717370319.407154	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
-#close	2024-06-03-06-18-39
+1718967768.196747	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect diagnostics function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.196747	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.196748	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect reset function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.196748	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.197690	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect report slave id function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.197690	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.197691	-	-	-	-	-	-	-	-	-	ModbusDetection::FUNCTION	detect read device identification function	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.197691	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718967768.222626	-	-	-	-	-	-	-	-	-	ModbusDetection::IP_STRANGER	detect strange ip address connecting to modbus	-	192.168.56.103	192.168.56.1	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718968700.486438	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718969600.487236	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1718969768.529880	-	-	-	-	-	-	-	-	-	CaptureLoss::Too_Little_Traffic	Only observed 0 TCP ACKs and was expecting at least 1.	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2024-06-21-18-36-08

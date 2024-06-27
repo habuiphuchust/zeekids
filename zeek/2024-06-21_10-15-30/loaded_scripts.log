@@ -3,7 +3,7 @@
 #empty_field	(empty)
 #unset_field	-
 #path	loaded_scripts
-#open	2024-06-21-18-02-20
+#open	2024-06-21-09-39-07
 #fields	name
 #types	string
 /opt/zeek/share/zeek/base/init-bare.zeek
@@ -506,4 +506,3 @@
   ./myscript/zeek-modbus-cc/__load__.zeek
     ./myscript/zeek-modbus-cc/main.zeek
       ./myscript/zeek-modbus-cc/conf.zeek
-#close	2024-06-21-18-36-08

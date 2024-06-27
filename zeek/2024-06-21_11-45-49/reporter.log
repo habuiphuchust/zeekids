@@ -1,0 +1,9 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	reporter
+#open	2024-06-21-11-41-22
+#fields	ts	level	message	location
+#types	time	enum	string	string
+1718944882.748064	Reporter::WARNING	Your interface is likely receiving invalid TCP checksums, most likely from NIC checksum offloading.  By default, packets with invalid checksums are discarded by Zeek unless using the -C command-line option or toggling the 'ignore_checksums' variable.  Alternatively, disable checksum offloading by the network adapter to ensure Zeek analyzes the actual checksums that are transmitted.	/opt/zeek/share/zeek/base/misc/find-checksum-offloading.zeek, line 54

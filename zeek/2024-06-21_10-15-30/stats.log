@@ -1,0 +1,16 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	stats
+#open	2024-06-21-09-39-08
+#fields	ts	peer	mem	pkts_proc	bytes_recv	pkts_dropped	pkts_link	pkt_lag	pkts_filtered	events_proc	events_queued	active_tcp_conns	active_udp_conns	active_icmp_conns	tcp_conns	udp_conns	icmp_conns	timers	active_timers	files	active_files	dns_requests	active_dns_requests	reassem_tcp_size	reassem_file_size	reassem_frag_size	reassem_unknown_size
+#types	time	string	count	count	count	count	count	interval	count	count	count	count	count	count	count	count	count	count	count	count	count	count	count	count	count	count	count
+1718937548.452874	zeek	239	1	60	0	3	0.008167	-	510	22	1	0	0	1	0	0	50	43	0	0	0	0	0	0	0	0
+1718937848.454732	zeek	242	1072	252004	0	1070	0.001097	-	2997	2986	4	1	0	254	5	3	2679	57	0	0	0	0	9518	0	0	0
+1718938148.459718	zeek	242	2167	1109563	0	2167	0.000931	-	2510	2516	5	0	0	32	4	2	1985	52	0	0	0	0	7084	0	0	0
+1718938448.475185	zeek	244	1947	974023	0	1947	0.004330	-	4542	4540	12	1	1	71	7	6	2223	89	17	0	0	0	23411	0	0	0
+1718938748.479544	zeek	287	23930	11608206	0	23935	0.022806	-	40514	40511	9	0	1	6744	5	3	25180	126	153	0	0	0	15483	0	0	0
+1718939048.483576	zeek	287	14117	9142346	0	14112	0.000597	-	14469	14469	6	1	0	54	6	3	2268	60	28	0	0	0	0	0	0	0
+1718939348.513546	zeek	287	49130	62115754	0	49133	0.003031	-	23505	23512	7	0	0	37	2651	513	8918	568	0	0	0	0	30316	0	63168	0
+1718939648.513655	zeek	287	10238	9316911	0	10235	0.000595	-	12020	12013	7	1	0	164	6	3	3004	574	9	0	0	0	12050	0	0	0
