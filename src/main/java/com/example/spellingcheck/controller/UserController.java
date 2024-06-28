@@ -3,11 +3,9 @@ package com.example.spellingcheck.controller;
 import com.example.spellingcheck.exception.ValidationException;
 import com.example.spellingcheck.model.dto.request.RegisterDTO;
 import com.example.spellingcheck.model.dto.response.UserDTO;
-import com.example.spellingcheck.model.entity.User;
 import com.example.spellingcheck.service.implement.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.validation.BindingResult;
@@ -25,14 +23,14 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public @ResponseBody ResponseEntity<List<UserDTO>> getAllUsers() {
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
         // This returns a JSON or XML with the users
         return userService.findAllUsers();
     }
 
     @GetMapping("/delete/{name}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public @ResponseBody ResponseEntity<String> deleteUser(@PathVariable String name) {
+    public ResponseEntity<String> deleteUser(@PathVariable String name) {
         // This returns a JSON or XML with the users
         return userService.deleteUser(name);
     }

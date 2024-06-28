@@ -506,4 +506,3 @@
   ./myscript/zeek-modbus-cc/__load__.zeek
     ./myscript/zeek-modbus-cc/main.zeek
       ./myscript/zeek-modbus-cc/conf.zeek
-#close	2024-06-28-21-11-54

@@ -1,5 +1,7 @@
 package com.example.spellingcheck.service.implement;
 
+import com.example.spellingcheck.exception.CustomException;
+import com.example.spellingcheck.exception.ExceptionCode;
 import com.example.spellingcheck.model.dto.response.ZeekDTO;
 import com.example.spellingcheck.service.IZeekidsService;
 import com.example.spellingcheck.util.Constants;
@@ -17,10 +19,8 @@ public class ZeekidsService implements IZeekidsService {
         if (zeekidsProcess == null || !zeekidsProcess.isAlive()) {
             try {
                 // Khởi động tiến trình Zeekids bằng ProcessBuilder
-                ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c",Constants.ZEEK_START_COMMAND);
+                ProcessBuilder processBuilder = new ProcessBuilder(Constants.ZEEK_START_COMMAND);
                 zeekidsProcess = processBuilder.start();
-
-                System.out.println(zeekidsProcess.pid());
 
                 // Kiểm tra xem tiến trình đã được khởi động thành công hay không
                 if (zeekidsProcess.isAlive()) {
@@ -49,15 +49,14 @@ public class ZeekidsService implements IZeekidsService {
             // Create a process builder
             ProcessBuilder processBuilder = new ProcessBuilder();
             // Split the command into a list of arguments
-            processBuilder.command("bash", "-c", Constants.ZEEK_STOP);
+            processBuilder.command(Constants.ZEEK_STOP);
             // Start the process
             Process process = processBuilder.start();
 
             process.waitFor();
-            processBuilder.command("bash", "-c", Constants.STORE_LOG);
+            processBuilder.command(Constants.STORE_LOG);
             processBuilder.start().waitFor();
             if (zeekidsProcess != null && zeekidsProcess.isAlive()) {
-                System.out.println(zeekidsProcess.pid());
                 // Tắt tiến trình Zeekids nếu đang chạy
                 zeekidsProcess.destroy();
                 zeekDTO.setStatus(true);
@@ -69,7 +68,8 @@ public class ZeekidsService implements IZeekidsService {
             return ResponseEntity.ok(zeekDTO);
 
         } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
+            throw new CustomException(ExceptionCode.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -79,14 +79,13 @@ public class ZeekidsService implements IZeekidsService {
             // Create a process builder
             ProcessBuilder processBuilder = new ProcessBuilder();
             // Split the command into a list of arguments
-            processBuilder.command("bash", "-c", Constants.ZEEK_CHECK_STATUS);
+            processBuilder.command(Constants.ZEEK_CHECK_STATUS);
             // Start the process
             Process process = processBuilder.start();
 
             // Read the output of the command
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line = reader.readLine();
-            System.out.println(line);
             if(line == null) {
                 zeekDTO.setStatus((false));
                 zeekDTO.setMessage("Zeekids is stopped");
@@ -97,12 +96,12 @@ public class ZeekidsService implements IZeekidsService {
 
             // Wait for the process to finish and get the exit code
             process.waitFor();
-//            System.out.println("\nExited with code: " + exitCode);
             reader.close();
             return ResponseEntity.ok(zeekDTO);
 
         } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
+            throw new CustomException(ExceptionCode.INTERNAL_SERVER_ERROR);
         }
     }
 

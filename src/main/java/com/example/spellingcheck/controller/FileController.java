@@ -1,6 +1,5 @@
 package com.example.spellingcheck.controller;
 
-import com.example.spellingcheck.model.dto.response.ZeekDTO;
 import com.example.spellingcheck.service.IFileService;
 import com.example.spellingcheck.util.Constants;
 import lombok.AllArgsConstructor;
@@ -9,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Objects;
 
 @RestController
@@ -25,13 +25,13 @@ public class FileController {
         return fileService.getListFiles(path);
     }
     @GetMapping("/logs/{filename}")
-    public ResponseEntity<Resource> GetLog(@PathVariable String filename) {
+    public ResponseEntity<Resource> getLog(@PathVariable String filename) {
         return fileService.getFile("./zeek/" + filename);
     }
     @PostMapping("/config/file")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> addFile(@RequestParam(name = "path", defaultValue = "") String path, @RequestBody String content,
-                                          @RequestParam(name = "new", defaultValue = "false") String create) {
+                                          @RequestParam(name = "new", defaultValue = "false") String create) throws IOException {
         boolean newFile = false;
         if (Objects.equals(create, "true")) newFile = true;
         return fileService.addFile(path, content, newFile);

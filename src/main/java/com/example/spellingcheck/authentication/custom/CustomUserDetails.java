@@ -18,7 +18,7 @@ import com.example.spellingcheck.model.entity.User;
 @RequiredArgsConstructor
 public class CustomUserDetails implements UserDetails {
     @NonNull
-    private User user;
+    private transient User user;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,5 +1,6 @@
 package com.example.spellingcheck.service;
 
+import com.example.spellingcheck.exception.CustomException;
 import com.example.spellingcheck.model.dto.request.ChangeUserDTO;
 import com.example.spellingcheck.model.dto.request.LoginDTO;
 import com.example.spellingcheck.model.dto.request.RegisterDTO;
@@ -13,5 +14,5 @@ public interface IAuthService {
 
     ResponseEntity<String> changePassword(ChangeUserDTO request);
 
-    ResponseEntity<AuthenticationDTO> getUser() throws RuntimeException;
+    ResponseEntity<AuthenticationDTO> getUser() throws CustomException;
 }

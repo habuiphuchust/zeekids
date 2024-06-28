@@ -1,5 +1,7 @@
 package com.example.spellingcheck.service.implement;
 
+import com.example.spellingcheck.exception.CustomException;
+import com.example.spellingcheck.exception.ExceptionCode;
 import com.example.spellingcheck.service.IFileService;
 import com.example.spellingcheck.util.Constants;
 import org.springframework.core.io.Resource;
@@ -12,11 +14,11 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 @Service
-public class FileService<T> implements IFileService {
+public class FileService implements IFileService {
     @Override
     public ResponseEntity<Resource> getFile(String filePath) {
         try {
@@ -31,7 +33,7 @@ public class FileService<T> implements IFileService {
             else
                 return ResponseEntity.badRequest().body(null);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new CustomException(ExceptionCode.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -61,8 +63,6 @@ public class FileService<T> implements IFileService {
                             json.append("{\"type\": \"directory\", \"path\": \"").append(newPath).append("\", \"name\": \"").append(file.getName()).append("\"},");
                         }
                     }
-                } else {
-                    System.out.println("The directory is empty or an error occurred.");
                 }
                 if (json.length() != 1) {
                     json.deleteCharAt(json.length() - 1);
@@ -73,25 +73,21 @@ public class FileService<T> implements IFileService {
 
                 return ResponseEntity.ok(json.toString());
             } else {
-                System.out.println("The path is not a directory.");
                 return ResponseEntity.badRequest().body("the path is not a directory");
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new CustomException(ExceptionCode.INTERNAL_SERVER_ERROR);
         }
     }
 
     @Override
-    public ResponseEntity<String> addFile(String path, String content, boolean create) {
+    public ResponseEntity<String> addFile(String path, String content, boolean create) throws IOException {
         File file = new File(Constants.ZEEK_CONFIG_PATH + path);
         if (file.exists() && !create)
             return ResponseEntity.badRequest().body("file existed");
-        try {
+        try ( FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH + path)) {
             // Tạo một đối tượng FileWriter để ghi nội dung vào tệp mới
-            FileWriter fileWriter = new FileWriter(Constants.ZEEK_CONFIG_PATH + path);
             fileWriter.write(content);
-            fileWriter.close();
-
             return ResponseEntity.ok("create file success");
         } catch (IOException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -117,9 +113,10 @@ public class FileService<T> implements IFileService {
         File file = new File(Constants.ZEEK_CONFIG_PATH + path);
 
         if (file.exists() && file.isFile()) {
-            if (file.delete()) {
+            try {
+                Files.delete(file.toPath());
                 return ResponseEntity.ok("File deleted successfully");
-            } else {
+            } catch (IOException e){
                 return ResponseEntity.badRequest().body("Failed to delete the file");
             }
         } else {
@@ -132,9 +129,11 @@ public class FileService<T> implements IFileService {
         File dir = new File(Constants.ZEEK_CONFIG_PATH + path);
 
         if (dir.exists() && dir.isDirectory()) {
-            if (dir.delete()) {
+            try {
+                Files.delete(dir.toPath());
                 return ResponseEntity.ok("Directory deleted successfully");
-            } else {
+            } catch (IOException e)
+            {
                 return ResponseEntity.badRequest().body("Failed to delete the directory");
             }
         } else {

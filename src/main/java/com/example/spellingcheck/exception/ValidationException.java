@@ -7,5 +7,5 @@ import org.springframework.validation.BindingResult;
 @AllArgsConstructor
 @Getter
 public class ValidationException extends RuntimeException{
-    private BindingResult bindingResult;
+    private final transient BindingResult bindingResult;
 }

@@ -14,7 +14,6 @@ import com.example.spellingcheck.repository.RoleRepository;
 import com.example.spellingcheck.repository.UserRepository;
 import com.example.spellingcheck.service.IAuthService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -61,7 +60,6 @@ public class AuthService implements IAuthService {
     public ResponseEntity<AuthenticationDTO> login(LoginDTO request) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
-        System.out.println(authentication.getName());
         List<String> roles = new ArrayList<>();
         for (GrantedAuthority grantedAuthority : authentication.getAuthorities()) {
             String authority = grantedAuthority.getAuthority();

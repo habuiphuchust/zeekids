@@ -2,8 +2,8 @@ package com.example.spellingcheck.config;
 
 import com.example.spellingcheck.authentication.jwt.JwtAuthenticationFilter;
 import com.example.spellingcheck.authentication.custom.CustomUserDetailsService;
-import com.example.spellingcheck.util.Constants;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -25,11 +25,14 @@ import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class WebSecurityConfig {
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
-    private CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
-    private CustomAccessDeniedHandler customAccessDeniedHandler;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
+
+    @Value("${cors.allowed.origins}")
+    private String allowedOrigins;
 
     @Bean
     AuthenticationManager authenticationManager(CustomUserDetailsService customUserDetailsService, PasswordEncoder passwordEncoder){
@@ -39,7 +42,6 @@ public class WebSecurityConfig {
 
         return new ProviderManager(authenticationProvider);
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -61,7 +63,7 @@ public class WebSecurityConfig {
 
     CorsConfigurationSource corsConfigurationSource(){
         var configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Collections.singletonList(Constants.ALLOWED_ORIGIN));
+        configuration.setAllowedOrigins(Collections.singletonList(allowedOrigins));
         configuration.setAllowedMethods(Collections.singletonList("*"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(Collections.singletonList("*"));

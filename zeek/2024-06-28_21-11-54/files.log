@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2024-06-21-11-41-17
+#fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+1718944877.466497	FoOEfeWdEks68Gpag	CiKxacOgBj3cqs2Lb	192.168.56.1	61933	192.168.56.106	8080	HTTP	0	SHA1,MD5	text/html	-	0.000000	T	F	199	199	0	0	F	-	280c34c2ab9b438cdc708195624414bf	389edb7f63923fdba398e91ea95216e78c9c3446	-	-	-	-
+1718944877.681419	Fqfzwp4tuWMYp2x5ma	CmAlr525nZqligkQle	192.168.56.1	61938	192.168.56.106	8080	HTTP	0	SHA1,MD5	text/html	-	0.000000	T	F	207	207	0	0	F	-	e46c4e5e1fbc64b1bae9ebd9bcef7fcf	d767b3cb0ad66544c649e4165fc4b37e3c17e370	-	-	-	-
+1718944881.761170	FxRPQB4Sd6Moz6pii8	ClLl5lxun6uOxd5fj	192.168.56.1	61941	192.168.56.106	8080	HTTP	0	SHA1,MD5	text/plain	-	0.000000	T	T	33	33	0	0	F	-	2324e6cf168971539d0a5f738c48c5a2	1dbedccd610d83688712d03e9233f1b839cfaef9	-	-	-	-
+1718944881.782510	FZOJDV22IerMBcTmtl	ClLl5lxun6uOxd5fj	192.168.56.1	61941	192.168.56.106	8080	HTTP	0	SHA1,MD5	text/html	-	0.000000	T	F	207	207	0	0	F	-	9b278b673aedd20d6e13c565397714a3	9d1589b22cca57703b0e2f289b6a422f99ba06de	-	-	-	-
+1718944973.746933	Fz6YHB4vrD1jOmWS3d	CXKQEc3QzVuc9PLveb	192.168.56.1	62071	192.168.56.106	8080	HTTP	0	SHA1,MD5	text/html	-	0.000000	T	F	207	207	0	0	F	-	9b278b673aedd20d6e13c565397714a3	9d1589b22cca57703b0e2f289b6a422f99ba06de	-	-	-	-
+#close	2024-06-21-11-45-50

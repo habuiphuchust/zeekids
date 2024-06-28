@@ -1,14 +1,11 @@
 package com.example.spellingcheck.exception;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @Getter
 public class CustomException extends RuntimeException{
-    private ExceptionCode exceptionCode;
-    private Object[] args;
-
+    private final ExceptionCode exceptionCode;
     public CustomException(ExceptionCode exceptionCode) {
         super(exceptionCode.getMessage());
         this.exceptionCode = exceptionCode;
